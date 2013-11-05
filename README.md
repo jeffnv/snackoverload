@@ -2,7 +2,7 @@
 
 11/5 Tuesday - 
 TODO:
-  create rails project
-  commit to github
-  Set Up devise
-  Set UP omniauth
+  ~~1. create rails project~~
+  ~~2. commit to github~~
+  3. Set Up devise
+  4. Set UP omniauth

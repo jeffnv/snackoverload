@@ -1,18 +1,24 @@
 ***snackoverload***
 
 *snackoverload* is a clone of the primary features of stackoverflow, 
-but about food! Like the originial *snackoverload* is made of questions, answers
+but about food! Like the originial, *snackoverload* is made of questions, answers
 votes, tags, and comments. I don't intend on implementing the non-essential 
 features like chat, but the main stuff should be there. Hopefully. 
 
 _Stay hungry, everybody_ :)
 
+
+
+11/6/13
+
 - [ ] Use chosen gem for adding tags?
+- [ ] Question Entry Page - need to be able to tag
+
+Later
+
+- [ ] Guest User Account
 - [ ] Look at the Javascript options on the bootstrap page
 - [ ] Include Twitter bootstrap rails gem
-- [ ] Make title bar look beautiful
-- [ ] Question Entry Page
-- [ ] Question Index
 - [ ] Question Show page
 - [ ] Question Show page lists Answers
 - [ ] Question Show page lists Comments for questions
@@ -26,4 +32,6 @@ _Stay hungry, everybody_ :)
 - [x] create rails project
 - [x] commit to github
 - [x] favico and title
+- [x] Make title bar look beautiful
+- [x] Question Index
 - [x] create all tables, models- [x] Set UP and push to Heroku

@@ -1,4 +1,4 @@
-***snackoverload*** _eat up_
+***snackoverload***
 
 *snackoverload* is a clone of the primary features of stackoverflow, 
 but about food! Like the originial *snackoverload* is made of questions, answers
@@ -7,7 +7,8 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
-
+- [ ] Include Twitter bootstrap rails gem
+- [ ] Make title bar look beautiful
 - [ ] Question Entry Page
 - [ ] Question Index
 - [ ] Question Show page

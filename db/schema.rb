@@ -11,7 +11,57 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131105213812) do
+ActiveRecord::Schema.define(:version => 20131106005324) do
+
+  create_table "answers", :force => true do |t|
+    t.text     "body",        :null => false
+    t.integer  "answerer_id", :null => false
+    t.integer  "question_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "answers", ["answerer_id"], :name => "index_answers_on_answerer_id"
+  add_index "answers", ["question_id"], :name => "index_answers_on_question_id"
+
+  create_table "comments", :force => true do |t|
+    t.text     "body",             :null => false
+    t.integer  "commentable_id",   :null => false
+    t.string   "commentable_type", :null => false
+    t.integer  "commenter_id",     :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commenter_id"], :name => "index_comments_on_commenter_id"
+
+  create_table "question_taggings", :force => true do |t|
+    t.integer  "tag_id",      :null => false
+    t.integer  "question_id", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "question_taggings", ["question_id"], :name => "index_question_taggings_on_question_id"
+  add_index "question_taggings", ["tag_id"], :name => "index_question_taggings_on_tag_id"
+
+  create_table "questions", :force => true do |t|
+    t.string   "title",      :null => false
+    t.text     "body",       :null => false
+    t.integer  "asker_id",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "questions", ["asker_id"], :name => "index_questions_on_asker_id"
+  add_index "questions", ["title"], :name => "index_questions_on_title"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -30,5 +80,17 @@ ActiveRecord::Schema.define(:version => 20131105213812) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "value",        :null => false
+    t.integer  "votable_id",   :null => false
+    t.string   "votable_type", :null => false
+    t.integer  "voter_id",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "votes", ["votable_id"], :name => "index_votes_on_votable_id"
+  add_index "votes", ["voter_id"], :name => "index_votes_on_voter_id"
 
 end

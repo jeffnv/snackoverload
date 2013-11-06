@@ -7,14 +7,20 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
-11/5 Tuesday - 
-TODO:
 
-- [ ] favico and title
-- [ ] create all tables, models
+- [ ] Question Entry Page
+- [ ] Question Index
+- [ ] Question Show page
+- [ ] Question Show page lists Answers
+- [ ] Question Show page lists Comments for questions
+- [ ] Question Show page lists Comments for answers
+- [ ] Make tests for model methods
+- [ ] Make tests for views
+- [ ] User Figaro for secrets - deferred
 - [ ] User Figaro for secrets - deferred
 - [ ] Set UP omniauth - deferred
 - [x] Set Up devise
 - [x] create rails project
 - [x] commit to github
-- [x] Set UP and push to Heroku
+- [x] favico and title
+- [x] create all tables, models- [x] Set UP and push to Heroku

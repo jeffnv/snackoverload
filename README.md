@@ -7,6 +7,7 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
+- [ ] Look at the Javascript options on the bootstrap page
 - [ ] Include Twitter bootstrap rails gem
 - [ ] Make title bar look beautiful
 - [ ] Question Entry Page

@@ -1,0 +1,13 @@
+<%@questions.each do |question|%>
+  <div class="page-header">
+    <h1><%=question.title%></h1>
+  </div>
+  <p class="lead"><%=question.body%>
+  </p>
+  
+  <% tags = question.tags%>
+  <%unless tags.empty?%>
+  <p>Tags: <%=tags.pluck(:name).join(',')%></p>
+  <%end%>
+  <p>Asked by: <%=question.asker.email%></p>
+<%end%>

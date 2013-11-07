@@ -8,10 +8,18 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 
 
+11/7/13
+- [ ] Use figaro hide secret token
+- [ ] Question show page
+- [ ] Adding answers
+- [ ] Adding Comments
+- [ ] voting
+
+
 
 11/6/13
-- [ ] Add New Tags on New Question Page
-- [ ] Tag Page
+- [x] Add New Tags on New Question Page
+- [x] Tag Page
 
 Later
 

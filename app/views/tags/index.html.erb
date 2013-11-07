@@ -1,0 +1,11 @@
+<% @tags.each_with_index do |tag, index|%>
+  <%if (index % @COLCOUNT == 0)%>
+    <div class="row">
+  <%end %>
+    <div class="col-md-<%=12 / @COLCOUNT%>">    
+      <a href="<%=tag_url(tag)%>"><%=tag.name%></a> x <%=tag.tagged_questions.count%>
+    </div>
+    <%if ((index + 1) % @COLCOUNT == 0)%>
+      </div>
+    <%end %>
+<% end%>

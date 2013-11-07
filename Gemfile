@@ -29,6 +29,7 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'devise'
 gem 'bcrypt-ruby'
+gem 'figaro'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

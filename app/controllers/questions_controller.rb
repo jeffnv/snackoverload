@@ -30,4 +30,9 @@ class QuestionsController < ApplicationController
       render :new
     end
   end
+  
+  def show
+    @question = Question.find(params[:id])
+    @answers = @question.answers
+  end
 end

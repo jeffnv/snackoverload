@@ -1,0 +1,36 @@
+<!-- title
+question body
+  comments
+
+# answers
+answer
+  comments -->
+
+<div class="question">
+  <div class="page-header">
+    <h1><%=@question.title%></h1>
+  </div>
+  <p class="lead"><%=@question.body%></p>
+  
+  <%=render 'shared/tags', tags: @question.tags%>
+  
+  <p>Asked by: <%=render 'shared/user', user: @question.asker%></p>
+  
+  <%=render 'shared/comments', comments: @question.comments%>
+</div><!-- question -->
+
+<h2><%=@question.answers.count%> answers</h2>
+
+<ul>
+  <%@question.answers.each do |answer|%>
+  <li>
+    <div class="answer">
+      <p class="lead"><%=answer.body%></p>
+      <p>
+        answered by: <%=render 'shared/user', user: answer.answerer%>
+      </p>
+      <%=render 'shared/comments', comments: answer.comments%>
+    </div>
+  </li>
+  <%end%>
+</ul>

@@ -1,9 +1,8 @@
 Snackoverload::Application.routes.draw do
 
-
-  devise_for :users
-
   root to: 'questions#index'
+  devise_for :users
+  resources :users, only: [:show]
   resources :questions
   resources :tags, only: [:index, :show]
 

@@ -9,11 +9,11 @@ _Stay hungry, everybody_ :)
 
 
 11/7/13
-- [ ] Use figaro hide secret token
-- [ ] Question show page
 - [ ] Adding answers
 - [ ] Adding Comments
 - [ ] voting
+- [x] Use figaro hide secret token
+- [x] Question show page
 
 
 

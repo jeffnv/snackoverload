@@ -1,0 +1,7 @@
+<div class="comments">  
+  <ul>
+    <%comments.each do |comment|%>
+      <li><p><%=comment.body%> - <%=render 'shared/user', user: comment.commenter%></p></li>
+    <%end%>
+  </ul>
+</div><!-- comments -->

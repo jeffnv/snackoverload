@@ -1,0 +1,8 @@
+
+<%unless tags.empty?%>
+<%tag_string = "Tags: "%>
+  <%tag_links = tags.map{|tag| render 'shared/tag', tag: tag}%>
+  <%tag_string = "Tags: " + tag_links.join(', ')%>
+<%end%>
+
+<p class="tags"><%=(tag_string || "").html_safe%></p>

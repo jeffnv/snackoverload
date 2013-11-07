@@ -1,13 +1,10 @@
 <%@questions.each do |question|%>
   <div class="page-header">
-    <h1><%=question.title%></h1>
+    <h1><a href="<%= question_url(question) %>"><%=question.title%></a></h1>
   </div>
   <p class="lead"><%=question.body%>
   </p>
   
-  <% tags = question.tags%>
-  <%unless tags.empty?%>
-  <p>Tags: <%=tags.pluck(:name).join(',')%></p>
-  <%end%>
-  <p>Asked by: <%=question.asker.email%></p>
+  <%=render 'shared/tags', tags: question.tags%>
+  <%=render 'shared/user', user: question.asker%>
 <%end%>

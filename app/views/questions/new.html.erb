@@ -12,12 +12,29 @@
   
   <label for="question">Question</label>
   <textarea type="text" name="question[body]" id="question"><%=@question.body%></textarea>
+  <br>
   
-  <select multiple name='tags[]'>
+  <label for="tags">Tags</label>
+  <select multiple class="chosen-select" name='tags[]' id="tags">
     <%@tags.each do |tag|%>
     <option value="<%=tag.id%>"><%=tag.name%></option>
     <%end%>
   </select>
+  <button id="add-tag-button" class='btn btn-primarty'>Add Tag</button>
+  <div class='new-tag-zone'>
+  </div>
   
   <p><input type="submit" value="Ask Question"></p>
 </form>
+
+<script>
+  $('.chosen-select').chosen();
+  $('#add-tag-button').on('click', function(event){
+    event.preventDefault();
+    var ntz = $('.new-tag-zone');
+
+
+    ntz.append('<label>New Tags, separated by commas.</label>')
+    ntz.append('<input type="text" name="new_tags_string">')
+  });
+</script>

@@ -10,7 +10,7 @@ _Stay hungry, everybody_ :)
 
 
 11/6/13
-
+- [ ] Add New Tags on New Question Page
 - [ ] Tag Page
 
 Later

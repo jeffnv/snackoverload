@@ -11,8 +11,13 @@
  *= require_self
  *= require_tree .
  *= require bootstrap
+*= require chosen
  */
 
 .main{
   padding-top: 60px;
+}
+
+.chosen-select{
+  width: 50%;
 }

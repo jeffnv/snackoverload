@@ -37,12 +37,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
-    chosen-rails (1.0.1)
-      coffee-rails (>= 3.2)
-      compass-rails (>= 1.0)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
-    chunky_png (1.2.9)
     coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -51,12 +45,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     debug_inspector (0.0.2)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
@@ -66,7 +54,6 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    fssm (0.2.10)
     hike (1.2.3)
     i18n (0.6.5)
     journey (1.0.4)
@@ -138,7 +125,6 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   binding_of_caller
-  chosen-rails
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails

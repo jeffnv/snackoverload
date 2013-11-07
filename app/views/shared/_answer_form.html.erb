@@ -1,0 +1,6 @@
+<form action="<%=question_answers_url(question)%>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <textarea placeholder="answer here" name="answer[body]"></textarea>
+  <br>
+  <button id="answer-button" >Submit Answer</button>
+</form>

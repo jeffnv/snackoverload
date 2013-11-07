@@ -18,7 +18,7 @@ answer
   
   <%=render 'shared/comments', comments: @question.comments%>
 </div><!-- question -->
-
+<hr>
 <h2><%=@question.answers.count%> answers</h2>
 
 <ul>
@@ -34,3 +34,11 @@ answer
   </li>
   <%end%>
 </ul>
+
+<hr>
+<h2>Have the Answer?</h2>
+<%if user_signed_in?%>
+<%=render 'shared/answer_form', question: @question%>
+<%else%>
+<h3><a href="<%=new_user_session_url%>">log in, and post it!</a></h3>
+<%end%>

@@ -1,7 +1,24 @@
 <div class="comments">  
-  <ul>
-    <%comments.each do |comment|%>
+  <ul class='comments-list' 
+   data-commentable="<%=commentable.class.to_s%>_<%=commentable.id%>" 
+   >
+    <%commentable.comments.each do |comment|%>
       <li><p><%=comment.body%> - <%=render 'shared/user', user: comment.commenter%></p></li>
     <%end%>
   </ul>
-</div><!-- comments -->
+  
+  
+  <form class="comment-form" accept-charset="utf-8">
+    <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <input type="hidden" 
+     name="comment[commentable_id]" value="<%=commentable.id%>">
+    <input type="hidden" 
+     name="comment[commentable_type]" value="<%=commentable.class.to_s%>">
+     
+    <label for="comment">Comment</label>
+    <input type="text" name="comment[body]" id="comment" 
+     placeholder="useful comment goes here">
+     <input type="submit" value="Add Comment" id="comment-button">
+  </form>
+  
+</div>

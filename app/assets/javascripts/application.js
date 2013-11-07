@@ -15,3 +15,4 @@
 //= require_tree .
 //= require bootstrap
 //= require chosen-jquery
+//= require serializeJSON

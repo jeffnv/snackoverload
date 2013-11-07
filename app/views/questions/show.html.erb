@@ -16,7 +16,7 @@ answer
   
   <p>Asked by: <%=render 'shared/user', user: @question.asker%></p>
   
-  <%=render 'shared/comments', comments: @question.comments%>
+  <%=render 'shared/comments', commentable: @question%>
 </div><!-- question -->
 <hr>
 <h2><%=@question.answers.count%> answers</h2>
@@ -29,7 +29,7 @@ answer
       <p>
         answered by: <%=render 'shared/user', user: answer.answerer%>
       </p>
-      <%=render 'shared/comments', comments: answer.comments%>
+      <%=render 'shared/comments', commentable: answer%>
     </div>
   </li>
   <%end%>
@@ -41,4 +41,35 @@ answer
 <%=render 'shared/answer_form', question: @question%>
 <%else%>
 <h3><a href="<%=new_user_session_url%>">log in, and post it!</a></h3>
+<%end%>
+
+<%if current_user%>
+<script>
+  $('.comment-form').on('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "<%=comments_url%>",
+      data: $(event.target).serializeJSON(),
+      success: function(comment){
+        var selectorString = '[data-commentable="' + 
+                              comment.commentable_type +
+                              '_' +
+                              comment.commentable_id + 
+                              '"]';
+                              
+        var $commentList = $(selectorString);
+          var newCommentStr = '<li>' + 
+                               comment.body +  
+                               ' - ' + 
+                               '<a href="<%=user_url(current_user)%>">' + 
+                               '<%=current_user.email%></a>' + 
+                               '</li>';
+          $commentList.append(newCommentStr)
+        
+
+      }
+    })
+  })
+</script
 <%end%>

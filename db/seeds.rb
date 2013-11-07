@@ -13,9 +13,9 @@ User.create!(email: "bob@bob.com", password: "asdfasdf",
 User.create!(email: "jim@jim.com", password: "asdfasdf", 
   password_confirmation: "asdfasdf", remember_me: true)
 #create 3 questions
-Question.create!(asker_id: 1, body: "how do I make kava?", title: "question1");
-Question.create!(asker_id: 1, body: "how do I make guac?", title: "question2");
-Question.create!(asker_id: 2, body: "kava + guac?", title: "question3");
+Question.create!(asker_id: 1, body: "how do I make kava?", title: "Kava Question");
+Question.create!(asker_id: 1, body: "how do I make guac?", title: "Guac Question");
+Question.create!(asker_id: 2, body: "kava + guac?", title: "Good Combo?");
 #create 2 tag
 Tag.create!(name: 'kava')
 Tag.create!(name: 'guacamole')

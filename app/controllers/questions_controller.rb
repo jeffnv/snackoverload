@@ -7,10 +7,12 @@ class QuestionsController < ApplicationController
   
   def new
     @question = Question.new
+    @tags = Tag.all
   end
   
   def create
     @question = Question.new(params[:question])
+    @question.tag_ids = params[:tags]
     @question.asker_id = current_user.id
     if @question.save
       redirect_to questions_url

@@ -11,8 +11,7 @@ _Stay hungry, everybody_ :)
 
 11/6/13
 
-- [ ] Use chosen gem for adding tags?
-- [ ] Question Entry Page - need to be able to tag
+- [ ] Tag Page
 
 Later
 
@@ -34,4 +33,5 @@ Later
 - [x] favico and title
 - [x] Make title bar look beautiful
 - [x] Question Index
+- [x] Question Entry Page - need to be able to tag
 - [x] create all tables, models- [x] Set UP and push to Heroku

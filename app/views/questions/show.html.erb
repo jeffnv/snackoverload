@@ -1,75 +1,109 @@
 <!-- title
 question body
-  comments
+comments
 
 # answers
 answer
-  comments -->
+comments -->
 
-<div class="question">
+<div class="question row">
   <div class="page-header">
     <h1><%=@question.title%></h1>
+  </div>  
+  <div class="col-xs-1">
+    <%=render "shared/vote_block", votable: @question%>
   </div>
-  <p class="lead"><%=@question.body%></p>
-  
-  <%=render 'shared/tags', tags: @question.tags%>
-  
-  <p>Asked by: <%=render 'shared/user', user: @question.asker%></p>
-  
-  <%=render 'shared/comments', commentable: @question%>
-</div><!-- question -->
-<hr>
-<h2><%=@question.answers.count%> answers</h2>
+  <div class="col-xs-11">
+    <div class="question-content">  
 
-<ul>
-  <%@question.answers.each do |answer|%>
-  <li>
-    <div class="answer">
-      <p class="lead"><%=answer.body%></p>
-      <p>
-        answered by: <%=render 'shared/user', user: answer.answerer%>
-      </p>
-      <%=render 'shared/comments', commentable: answer%>
+    
+      <p class="lead"><%=@question.body%></p>
+      <%=render 'shared/tags', tags: @question.tags%>
+      <p>Asked by: <%=render 'shared/user', user: @question.asker%></p>
+    </div> <!-- question content -->
+    <%=render 'shared/comments', commentable: @question%>
+  </div><!-- question -->
+  <hr>
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-11">
+      <h2><%=@question.answers.count%> answers</h2>
+
+      <ul>
+        <%@question.answers.each do |answer|%>
+        <li>
+          <div class="answer">
+            <p class="lead"><%=answer.body%></p>
+            <p>
+              answered by: <%=render 'shared/user', user: answer.answerer%>
+            </p>
+            <%=render 'shared/comments', commentable: answer%>
+          </div>
+        </li>
+        <%end%>
+      </ul>
     </div>
-  </li>
-  <%end%>
-</ul>
 
-<hr>
-<h2>Have the Answer?</h2>
-<%if user_signed_in?%>
-<%=render 'shared/answer_form', question: @question%>
-<%else%>
-<h3><a href="<%=new_user_session_url%>">log in, and post it!</a></h3>
-<%end%>
+    <hr>
+    <h2>Have the Answer?</h2>
+    <%if user_signed_in?%>
+    <%=render 'shared/answer_form', question: @question%>
+    <%else%>
+    <h3><a href="<%=new_user_session_url%>">log in, and post it!</a></h3>
+    <%end%>
+  </div>
+</div>
 
 <%if current_user%>
 <script>
-  $('.comment-form').on('submit', function(event){
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "<%=comments_url%>",
-      data: $(event.target).serializeJSON(),
-      success: function(comment){
-        var selectorString = '[data-commentable="' + 
-                              comment.commentable_type +
-                              '_' +
-                              comment.commentable_id + 
-                              '"]';
+$('.comment-form').on('submit', function(event){
+  event.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "<%=comments_url%>",
+    data: $(event.target).serializeJSON(),
+    success: function(comment){
+      var selectorString = '[data-commentable="' + 
+      comment.commentable_type +
+      '_' +
+      comment.commentable_id + 
+      '"]';
                               
-        var $commentList = $(selectorString);
-          var newCommentStr = '<li>' + 
-                               comment.body +  
-                               ' - ' + 
-                               '<a href="<%=user_url(current_user)%>">' + 
-                               '<%=current_user.email%></a>' + 
-                               '</li>';
-          $commentList.append(newCommentStr)
+      var $commentList = $(selectorString);
+      var newCommentStr = '<li>' + 
+      comment.body +  
+      ' - ' + 
+      '<a href="<%=user_url(current_user)%>">' + 
+      '<%=current_user.email%></a>' + 
+      '</li>';
+      $commentList.append(newCommentStr)
         
 
-      }
-    })
+    }
   })
+})
+
+$('.vote').on('click', function(event){
+  var up = $(event.currentTarget).data('type') === "upvote";
+  var votableString = $(event.currentTarget).data('votable');
+  var votableType = votableString.split('_')[0];
+  var votableID = parseInt(votableString.split('_')[1]);
+  var newVote = {vote: {
+    votable_type: votableType,
+    votable_id: votableID,
+    value: up ? 1 : -1,
+  }};
+  $.ajax({
+    type: "PUT",
+    url: "<%=votes_url%>",
+    data: newVote,
+    success: function(score){
+
+      $('.score[data-votable="' + votableString +'"]').html(score['score']);
+    }
+  })
+
+  //using the response, update the color of the upvote/downvote
+})
 </script
 <%end%>

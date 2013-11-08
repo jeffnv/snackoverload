@@ -11,6 +11,7 @@ _Stay hungry, everybody_ :)
 - [ ] Add means to vote
 - [ ] AJAX up voting
 - [ ] Vote with triangles!
+- [ ] Only color answers if they are more than 1
 
 
 11/7/13
@@ -28,6 +29,13 @@ _Stay hungry, everybody_ :)
 
 
 Later
+- [ ] Tag page looks not so good
+- [ ] No need to show num of tagged articles for tags everywhere
+- [ ] Timestamps on comments, questions, answers
+- [ ] Display tags in right sidebar
+- [ ] My Tags, newest, votes, no answers tabs
+- [ ] Pagination
+- [ ] Choosing an answer as correct
 - [ ] Limit body of question to x lines
 - [ ] Guest User Account
 - [ ] Modal's that pop up when you do stuff requiring login
@@ -41,7 +49,6 @@ Later
 
 
 Completed....
-
 - [x] Set Up devise
 - [x] create rails project
 - [x] commit to github

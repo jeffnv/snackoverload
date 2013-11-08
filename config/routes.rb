@@ -9,5 +9,5 @@ Snackoverload::Application.routes.draw do
   resources :tags, only: [:index, :show]
   resources :answers, only: [:create]
   resources :comments, only: [:create, :destroy]
-
+  put 'votes', to: 'votes#update'
 end

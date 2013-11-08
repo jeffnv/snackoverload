@@ -3,8 +3,17 @@ module Votable
   included do
     has_many :votes, as: :votable
   end
-  
+
   #score
-  #upvotes
-  #downvotes
+  def score
+    self.votes.sum('value')
+  end
+  
+  def upvotes
+    self.votes.where('value = 1').count
+  end
+  
+  def downvotes
+    self.votes.where('value = -1').count
+  end
 end

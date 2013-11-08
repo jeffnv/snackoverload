@@ -1,3 +1,20 @@
-// Place all the styles related to the Questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.question-stats{
+  background: #ddd;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.question-vote-count{
+  
+}
+
+.question-vote-answer{
+  background: #33CC66;
+  padding: 5px;
+}
+
+.stat-number{
+  font-size:24px;
+  font-weight:bold;
+}

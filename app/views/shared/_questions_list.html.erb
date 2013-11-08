@@ -1,10 +1,18 @@
 <%@questions.each do |question|%>
-  <div class="page-header">
-    <h1><a href="<%= question_url(question) %>"><%=question.title%></a></h1>
+
+<div class='row'>
+  <div class="question-stats col-xs-2">
+    <div class="question-vote-count"><span class='stat-number'><%=question.score%></span><br>votes</div>
+    <div class="question-vote-answer"><span class='stat-number'><%=question.answers.count%></span><br>answers</div>
   </div>
-  <p class="lead"><%=question.body%>
-  </p>
+
+  <div class="question col-xs-10">
+    <h2><a href="<%= question_url(question) %>"><%=question.title%></a></h2>
+    <p><%=question.body%></p>
+    <%=render 'shared/tags', tags: question.tags%>
+    <%=render 'shared/user', user: question.asker%>
+</div>
   
-  <%=render 'shared/tags', tags: question.tags%>
-  <%=render 'shared/user', user: question.asker%>
+</div>
+<hr>
 <%end%>

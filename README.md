@@ -22,19 +22,14 @@ _Stay hungry, everybody_ :)
 - [x] Add New Tags on New Question Page
 - [x] Tag Page
 
+
 Later
 
 - [ ] Guest User Account
 - [ ] Look at the Javascript options on the bootstrap page
-- [ ] Include Twitter bootstrap rails gem
-- [ ] Question Show page
-- [ ] Question Show page lists Answers
-- [ ] Question Show page lists Comments for questions
-- [ ] Question Show page lists Comments for answers
 - [ ] Make tests for model methods
 - [ ] Make tests for views
-- [ ] User Figaro for secrets - deferred
-- [ ] Set UP omniauth - deferred
+- [ ] Set UP omniauth
 - [x] Set Up devise
 - [x] create rails project
 - [x] commit to github

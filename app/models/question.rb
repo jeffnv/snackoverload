@@ -9,4 +9,6 @@ class Question < ActiveRecord::Base
   has_many :tags, through: :question_taggings, source: :tag
   
   belongs_to :asker, foreign_key: :asker_id, class_name: 'User'
+  
+  
 end

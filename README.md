@@ -9,11 +9,12 @@ _Stay hungry, everybody_ :)
 
 
 11/7/13
-- [ ] Adding answers
-- [ ] Adding Comments
-- [ ] voting
+- [ ] show vote counts
+- [ ] add means to vote
 - [x] Use figaro hide secret token
+- [x] Adding Comments
 - [x] Question show page
+- [x] Adding answers
 
 
 
@@ -32,7 +33,6 @@ Later
 - [ ] Question Show page lists Comments for answers
 - [ ] Make tests for model methods
 - [ ] Make tests for views
-- [ ] User Figaro for secrets - deferred
 - [ ] User Figaro for secrets - deferred
 - [ ] Set UP omniauth - deferred
 - [x] Set Up devise

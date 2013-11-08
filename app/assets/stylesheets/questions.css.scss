@@ -1,10 +1,29 @@
 .question-stats{
+  
   background: #ddd;
   padding: 5px;
+  margin-top: 20px;
   text-align: center;
   font-size: 14px;
+  width: 80px;
+
 }
 
+.tag{
+  background-color: #E0EAF1;
+  border-bottom: 1px solid #b3cee1;
+  border-right: 1px solid #b3cee1;
+}
+.right-point{
+  position:absolute;
+    left:95px;
+    top:40px;
+    width: 0; 
+  	height: 0; 
+  	border-top: 10px solid transparent;
+  	border-bottom: 10px solid transparent;
+	  border-left: 10px solid #ddd;
+}
 .question-vote-count{
   
 }
@@ -12,6 +31,7 @@
 .question-vote-answer{
   background: #33CC66;
   padding: 5px;
+
 }
 
 .stat-number{

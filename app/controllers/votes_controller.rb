@@ -18,7 +18,9 @@ class VotesController < ApplicationController
     end
     
     if @vote.save
-      new_score = @vote.votable_type.constantize.find(@vote.votable_id).score
+      votable_type = @vote.votable_type.constantize
+      votable_instance = votable_type.find(@vote.votable_id)
+      new_score = votable_instance.score
       render json: {score: new_score}
     else
       render json: @vote.errors.full_messages
@@ -26,10 +28,3 @@ class VotesController < ApplicationController
     
   end
 end
-
-t.integer  "value",        :null => false
-t.integer  "votable_id",   :null => false
-t.string   "votable_type", :null => false
-t.integer  "voter_id",     :null => false
-t.datetime "created_at",   :null => false
-t.datetime "updated_at",   :null => false

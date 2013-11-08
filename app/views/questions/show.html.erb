@@ -88,14 +88,17 @@ $('.vote').on('click', function(event){
   var votableString = $(event.currentTarget).data('votable');
   var votableType = votableString.split('_')[0];
   var votableID = parseInt(votableString.split('_')[1]);
+  var votesURL = "<%=votes_url%>";
   var newVote = {vote: {
     votable_type: votableType,
     votable_id: votableID,
-    value: up ? 1 : -1,
+    value: up ? 1 : -1
   }};
+  
+  console.log(newVote);
   $.ajax({
     type: "PUT",
-    url: "<%=votes_url%>",
+    url: votesURL,
     data: newVote,
     success: function(score){
 
@@ -103,7 +106,6 @@ $('.vote').on('click', function(event){
     }
   })
 
-  //using the response, update the color of the upvote/downvote
 })
 </script
 <%end%>

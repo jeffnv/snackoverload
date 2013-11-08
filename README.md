@@ -8,9 +8,9 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 
 11/8/2013
-- [ ] Add means to vote
-- [ ] AJAX up voting
-- [ ] Vote with triangles!
+- [x] Add means to vote
+- [x] AJAX up voting
+- [x] Vote with triangles!
 - [ ] Only color answers if they are more than 1
 
 

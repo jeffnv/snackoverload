@@ -9,10 +9,11 @@ _Stay hungry, everybody_ :)
 
 11/8/2013
 - [ ] Add means to vote
+- [ ] AJAX up voting
+- [ ] Vote with triangles!
 
 
 11/7/13
-- [ ] add means to vote
 - [x] show vote counts
 - [x] Use figaro hide secret token
 - [x] Adding Comments
@@ -27,12 +28,20 @@ _Stay hungry, everybody_ :)
 
 
 Later
-
+- [ ] Limit body of question to x lines
 - [ ] Guest User Account
-- [ ] Look at the Javascript options on the bootstrap page
+- [ ] Modal's that pop up when you do stuff requiring login
+- [ ] Dropdown's when you hover over tags with stats
+- [ ] User profiles
+- [ ] Following tags
+- [ ] News feed of tags?
 - [ ] Make tests for model methods
 - [ ] Make tests for views
 - [ ] Set UP omniauth
+
+
+Completed....
+
 - [x] Set Up devise
 - [x] create rails project
 - [x] commit to github

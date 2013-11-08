@@ -7,10 +7,13 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
+11/8/2013
+- [ ] Add means to vote
+
 
 11/7/13
-- [ ] show vote counts
 - [ ] add means to vote
+- [x] show vote counts
 - [x] Use figaro hide secret token
 - [x] Adding Comments
 - [x] Question show page

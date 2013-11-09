@@ -13,7 +13,8 @@
     <h2><a href="<%= question_url(question) %>"><%=question.title%></a></h2>
     <p><%=question.body%></p>
     <%=render 'shared/tags', tags: question.tags%>
-    <%=render 'shared/user', user: question.asker%>
+    <p>Asked by: <%=render 'shared/user', user: question.asker%> 
+       at <%=render 'shared/timestamp', time: question.created_at%></p>
 </div>
   
 </div>

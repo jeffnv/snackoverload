@@ -19,7 +19,8 @@ comments -->
     
       <p class="lead"><%=@question.body%></p>
       <%=render 'shared/tags', tags: @question.tags%>
-      <p>Asked by: <%=render 'shared/user', user: @question.asker%></p>
+      <p>Asked by: <%=render 'shared/user', user: @question.asker%> 
+        at <%=render 'shared/timestamp', time: @question.created_at%></p>
     </div> <!-- question content -->
     <%=render 'shared/comments', commentable: @question%>
   </div><!-- question -->
@@ -36,6 +37,7 @@ comments -->
             <p class="lead"><%=answer.body%></p>
             <p>
               answered by: <%=render 'shared/user', user: answer.answerer%>
+              at <%=render 'shared/timestamp', time: answer.created_at%>
             </p>
             <%=render 'shared/comments', commentable: answer%>
           </div>

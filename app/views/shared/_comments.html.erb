@@ -3,7 +3,7 @@
    data-commentable="<%=commentable.class.to_s%>_<%=commentable.id%>" 
    >
     <%commentable.comments.each do |comment|%>
-      <li><p><%=comment.body%> - <%=render 'shared/user', user: comment.commenter%></p></li>
+      <li><p><%=comment.body%> - <%=render 'shared/user', user: comment.commenter%> at <%=render 'shared/timestamp', time: comment.created_at%></p></li>
     <%end%>
   </ul>
   

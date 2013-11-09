@@ -8,11 +8,15 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 
 11/8/2013
+
+- [ ] Timestamps for questions
+- [ ] Timesstamps for comments
+- [ ] Timestamps for answers
+- [ ] Color indicates your vote?
+- [ ] Only color answers if they are more than 1
 - [x] Add means to vote
 - [x] AJAX up voting
 - [x] Vote with triangles!
-- [ ] Only color answers if they are more than 1
-
 
 11/7/13
 - [x] show vote counts
@@ -29,6 +33,7 @@ _Stay hungry, everybody_ :)
 
 
 Later
+- [ ] Don't allow empty answers/questions/comments
 - [ ] Tag page looks not so good
 - [ ] No need to show num of tagged articles for tags everywhere
 - [ ] Timestamps on comments, questions, answers

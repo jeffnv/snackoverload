@@ -12,6 +12,7 @@ _Stay hungry, everybody_ :)
 - [ ] Improve question form
 - [ ] Add validations to models
 - [ ] User profile
+- [ ] Tag page looks not so good
 
 11/8/2013
 
@@ -41,7 +42,6 @@ _Stay hungry, everybody_ :)
 Later
 - [ ] Fork on github
 - [ ] Don't allow empty answers/questions/comments
-- [ ] Tag page looks not so good
 - [ ] No need to show num of tagged articles for tags everywhere
 - [ ] Display tags in right sidebar
 - [ ] My Tags, newest, votes, no answers tabs

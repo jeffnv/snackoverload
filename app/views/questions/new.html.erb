@@ -1,4 +1,4 @@
-<form action="<%=questions_url%>" method="post" accept-charset="utf-8">
+<form action="<%=questions_url%>" method="post" accept-charset="utf-8" role="form">
   <input 
    type="hidden" 
    name="authenticity_token" 
@@ -6,21 +6,31 @@
    id="authenticity_token"
   >
   
+  <div class="form-group">
   <label for="title">Title</label>
-  <input type="text" name="question[title]" value="<%=@question.title%>" id="title">
+  <input class="form-control" type="text" name="question[title]" value="<%=@question.title%>" id="title">
   <br>
-  
+</div>
+
+  <div class="form-group">
+    
   <label for="question">Question</label>
-  <textarea type="text" name="question[body]" id="question"><%=@question.body%></textarea>
+  <textarea class="form-control" type="text" name="question[body]" id="question"><%=@question.body%></textarea>
+</div>
   <br>
   
   <label for="tags">Tags</label>
+  <br>
   <select multiple class="chosen-select" name='tags[]' id="tags">
     <%@tags.each do |tag|%>
-    <option value="<%=tag.id%>"><%=tag.name%></option>
+      <option value="<%=tag.id%>"><%=tag.name%></option>
     <%end%>
   </select>
-  <button id="add-tag-button" class='btn btn-primarty'>Add Tag</button>
+  <br>
+  <br>
+  <button id="add-tag-button" class='btn'>Add Additional Tags</button>
+  <br>
+  <br>
   <div class='new-tag-zone'>
   </div>
   
@@ -34,7 +44,7 @@
     var ntz = $('.new-tag-zone');
 
 
-    ntz.append('<label>New Tags, separated by commas.</label>')
-    ntz.append('<input type="text" name="new_tags_string">')
+    ntz.append('<div class="form group" <label>New Tags, separated by commas.</label>')
+    ntz.append('<input type="text" class="form-control" name="new_tags_string"></div><br><br>')
   });
 </script>

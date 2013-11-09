@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<row>
+  <div class="col-md-12">
+    <h2><%=@user.email%></h2>
+    <br>
+    <hr>
+    <%= image_tag (avatar_url(@user) + "?s=200")%>
+  </div>
+</row>

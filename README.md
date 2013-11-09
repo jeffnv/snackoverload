@@ -7,12 +7,16 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
-11/9/2013
-- [x] Colors on question stats on index
-- [ ] Improve question form
+11/9-10/2013
+
+- [ ] Fix tag-enter new-box problem
+- [ ] User profile with gravatar, list of questions asked, list of votes
+- [ ] Users index with lil' gravatars and links to profiles
 - [ ] Add validations to models
-- [ ] User profile
-- [ ] Tag page looks not so good
+- [ ] About page with link to my github/linkedin
+- [x] Tag page looks not so good
+- [x] Improve question form
+- [x] Colors on question stats on index
 
 11/8/2013
 
@@ -40,6 +44,11 @@ _Stay hungry, everybody_ :)
 
 
 Later
+- [ ] Nice JavaScript feedback for stuff
+- [ ] Favoriting Tags
+- [ ] Hover over tag menu
+- [ ] Hover tag menu can favorite/unfavorite a tag
+- [ ] Hover over a tag and see links to google search, 
 - [ ] Fork on github
 - [ ] Don't allow empty answers/questions/comments
 - [ ] No need to show num of tagged articles for tags everywhere

@@ -1,8 +1,17 @@
 <row>
   <div class="col-md-12">
     <h2><%=@user.email%></h2>
-    <br>
     <hr>
+  </div>
+  <div class="col-xs-4">
     <%= image_tag (avatar_url(@user) + "?s=200")%>
+    <div class="rep-stats">
+      <span class="rep-num"><%= @rep %></span>
+      <br>
+      <span class="rep-word">Reputation</span>
+    </div>
+  </div>
+  <div class="col-xs-8">
+    <%= render 'shared/questions_list', questions: @user.questions%>
   </div>
 </row>

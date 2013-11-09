@@ -10,6 +10,7 @@ _Stay hungry, everybody_ :)
 11/9-10/2013
 
 - [ ] User profile has list of questions asked, list of votes
+- [ ] Users link goes to index
 - [ ] Users index with lil' gravatars and links to profiles
 - [ ] Add validations to models
 - [ ] About page with link to my github/linkedin

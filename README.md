@@ -7,10 +7,16 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
+11/9/2013
+- [ ] Colors on question stats on index
+- [ ] Improve question form
+- [ ] Add validations to models
+- [ ] User profile
+
 11/8/2013
 
 
-- [ ] Color indicates your vote?
+- [x] Color indicates your vote?
 - [x] Timestamps for questions
 - [x] Timesstamps for comments
 - [x] Timestamps for answers- [ ] Only color answers if they are more than 1
@@ -36,7 +42,6 @@ Later
 - [ ] Don't allow empty answers/questions/comments
 - [ ] Tag page looks not so good
 - [ ] No need to show num of tagged articles for tags everywhere
-- [ ] Timestamps on comments, questions, answers
 - [ ] Display tags in right sidebar
 - [ ] My Tags, newest, votes, no answers tabs
 - [ ] Pagination

@@ -10,5 +10,11 @@ class Question < ActiveRecord::Base
   
   belongs_to :asker, foreign_key: :asker_id, class_name: 'User'
   
+  def confirmed?
+    self.answers.where(chosen: true).count > 0 
+  end
   
+  def answered?
+    self.answers.count > 0
+  end
 end

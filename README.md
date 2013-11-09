@@ -8,7 +8,7 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 
 11/9/2013
-- [ ] Colors on question stats on index
+- [x] Colors on question stats on index
 - [ ] Improve question form
 - [ ] Add validations to models
 - [ ] User profile
@@ -39,6 +39,7 @@ _Stay hungry, everybody_ :)
 
 
 Later
+- [ ] Fork on github
 - [ ] Don't allow empty answers/questions/comments
 - [ ] Tag page looks not so good
 - [ ] No need to show num of tagged articles for tags everywhere

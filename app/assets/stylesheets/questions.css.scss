@@ -10,24 +10,30 @@
 
 .right-point{
   position:absolute;
-    left:95px;
-    top:40px;
-    width: 0; 
-  	height: 0; 
-  	border-top: 10px solid transparent;
-  	border-bottom: 10px solid transparent;
-	  border-left: 10px solid #ddd;
+  left:95px;
+  top:40px;
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #ddd;
 }
 .question-vote-count{
   
 }
 
 .question-vote-answer{
-  background: #33CC66; /*beautiful green*/
   padding: 5px;
-
 }
 
+.question-vote-answer.answered{
+  background: #33CC66; /*beautiful green*/
+}
+
+.question-vote-answer.confirmed{
+  color: yellow;
+}
+  
 .stat-number{
   font-size:24px;
   font-weight:bold;

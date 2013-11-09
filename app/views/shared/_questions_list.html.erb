@@ -5,7 +5,11 @@
     <div class="question-stats">
       <div class="right-point"></div>
       <div class="question-vote-count"><span class='stat-number'><%=question.score%></span><br>votes</div>
-      <div class="question-vote-answer"><span class='stat-number'><%=question.answers.count%></span><br>answers</div>
+      <div 
+       class="question-vote-answer <%= question.confirmed? ? "confirmed" : ""%> <%= question.answered? ? "answered" : ""%>">
+        <span class='stat-number'><%=question.answers.count%>
+        </span><br>answers
+      </div>
   </div>
   </div>
 

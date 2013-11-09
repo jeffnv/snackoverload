@@ -9,11 +9,11 @@ _Stay hungry, everybody_ :)
 
 11/8/2013
 
-- [ ] Timestamps for questions
-- [ ] Timesstamps for comments
-- [ ] Timestamps for answers
+
 - [ ] Color indicates your vote?
-- [ ] Only color answers if they are more than 1
+- [x] Timestamps for questions
+- [x] Timesstamps for comments
+- [x] Timestamps for answers- [ ] Only color answers if they are more than 1
 - [x] Add means to vote
 - [x] AJAX up voting
 - [x] Vote with triangles!

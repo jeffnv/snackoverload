@@ -14,6 +14,7 @@ _Stay hungry, everybody_ :)
 - [ ] Users index with lil' gravatars and links to profiles
 - [ ] Add validations to models
 - [ ] About page with link to my github/linkedin
+- [ ] Guest account
 - [x] Tag page looks not so good
 - [x] Improve question form
 - [x] Colors on question stats on index
@@ -66,6 +67,7 @@ Later
 - [ ] Make tests for model methods
 - [ ] Make tests for views
 - [ ] Set UP omniauth
+- [ ] Confirmed questions cannot be answered
 
 
 Completed....

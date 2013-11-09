@@ -11,7 +11,7 @@
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
 	
-  border-bottom: 15px solid #33CC66;
+  border-bottom: 15px solid #404040;
 }
 
 
@@ -28,5 +28,13 @@
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
 	
-  border-top: 15px solid #33CC66;
+  border-top: 15px solid #404040;
+}
+
+.vote.up.lit{
+  border-bottom: 15px solid #33CC66;
+}
+
+.vote.down.lit{
+  border-top: 15px solid #FF3333;
 }

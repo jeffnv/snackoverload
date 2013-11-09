@@ -21,7 +21,7 @@ class VotesController < ApplicationController
       votable_type = @vote.votable_type.constantize
       votable_instance = votable_type.find(@vote.votable_id)
       new_score = votable_instance.score
-      render json: {score: new_score}
+      render json: {score: new_score, new_vote: @vote.value}
     else
       render json: @vote.errors.full_messages
     end

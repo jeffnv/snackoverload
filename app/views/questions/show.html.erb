@@ -86,6 +86,8 @@ $('.comment-form').on('submit', function(event){
 })
 
 $('.vote').on('click', function(event){
+  var upButton = $('.vote.up')
+  var downButton = $('.vote.down')
   var up = $(event.currentTarget).data('type') === "upvote";
   var votableString = $(event.currentTarget).data('votable');
   var votableType = votableString.split('_')[0];
@@ -103,8 +105,24 @@ $('.vote').on('click', function(event){
     url: votesURL,
     data: newVote,
     success: function(score){
-
+      if(score['new_vote'] == 1){
+        upButton.addClass('lit');
+        downButton.removeClass('lit');
+      }
+      else if(score['new_vote'] == -1){
+        upButton.removeClass('lit');
+        downButton.addClass('lit');
+      }
+      else{
+        //vote is 0
+        upButton.removeClass('lit');
+        downButton.removeClass('lit');
+      }
+      //if vote val is 0, toggle the button
+      //if it is 1 turn on the top
+      //if it is -1 turn on the bottom
       $('.score[data-votable="' + votableString +'"]').html(score['score']);
+      
     }
   })
 

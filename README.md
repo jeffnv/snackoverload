@@ -9,12 +9,12 @@ _Stay hungry, everybody_ :)
 
 11/9-10/2013
 
-- [ ] Fix tag-enter new-box problem
 - [ ] User profile with gravatar, list of questions asked, list of votes
 - [ ] Users index with lil' gravatars and links to profiles
 - [ ] Add validations to models
 - [ ] About page with link to my github/linkedin
 - [ ] Guest account
+- [x] Fix tag-enter new-box problem
 - [x] Tag page looks not so good
 - [x] Improve question form
 - [x] Colors on question stats on index
@@ -68,6 +68,7 @@ Later
 - [ ] Make tests for views
 - [ ] Set UP omniauth
 - [ ] Confirmed questions cannot be answered
+- [ ] Put minesweeper/snake on there
 
 
 Completed....

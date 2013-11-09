@@ -28,13 +28,12 @@
   </select>
   <br>
   <br>
-  <button id="add-tag-button" class='btn'>Add Additional Tags</button>
+  <button id="add-tag-button" class='btn btn-primary'>Add Additional Tags</button>
   <br>
   <br>
-  <div class='new-tag-zone'>
-  </div>
-  
-  <p><input type="submit" value="Ask Question"></p>
+  <div class='new-tag-zone'></div>
+  <br>
+  <button type="submit" class="btn btn-primary">Ask Question</button>
 </form>
 
 <script>
@@ -42,9 +41,10 @@
   $('#add-tag-button').on('click', function(event){
     event.preventDefault();
     var ntz = $('.new-tag-zone');
-
-
-    ntz.append('<div class="form group" <label>New Tags, separated by commas.</label>')
-    ntz.append('<input type="text" class="form-control" name="new_tags_string"></div><br><br>')
+    if(ntz.html() == ""){
+      ntz.append('<div class="form group" <label>New tags, separated by commas.</label>')
+      ntz.append('<input type="text" class="form-control" name="new_tags_string"></div><br><br>')
+    }
+    
   });
 </script>

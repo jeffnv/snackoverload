@@ -1,7 +1,7 @@
 Snackoverload::Application.routes.draw do
   root to: 'questions#index'
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:index, :show]
   resources :questions do
     resources :answers, only:[:create]
   end

@@ -1,0 +1,15 @@
+<%@users.each_with_index do |user, index|%>
+  <%if (index % @COLCOUNT == 0)%>
+    <div class="row user-index-row">
+    <%end %>
+    <div class="col-md-<%=12 / @COLCOUNT%>">    
+      <div class="user-index-col">
+        <div class="lil-gravatar"><%=image_tag avatar_url(user) + "?s=60"%></div>
+        <a class="user" href="<%=user_url(user)%>"><%=user.email%></a>
+        <p>Reputation: <%=random_rep%></p>
+      </div>
+    </div>
+    <%if ((index + 1) % @COLCOUNT == 0)%>
+    </div>
+  <%end %>  
+<%end%>

@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @COLCOUNT = 3
+    @COLCOUNT = 2
     @users = User.all
   end
 end

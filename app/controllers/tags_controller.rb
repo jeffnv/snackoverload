@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def index
-    @COLCOUNT = 4
+    @COLCOUNT = 3
     @tags = Tag.all
   end
 

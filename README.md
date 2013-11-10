@@ -9,10 +9,11 @@ _Stay hungry, everybody_ :)
 
 11/9-10/2013
 
+- [ ] Seed DB with less stupid data
+- [ ] Guest account
 - [ ] User profile has list of questions asked, list of votes
 - [ ] Add validations to models
 - [ ] About page with link to my github/linkedin
-- [ ] Guest account
 - [ ] Tag Favoriting
 - [ ] Removal Of Favorite Tags
 - [ ] Sidebar holds tags

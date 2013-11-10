@@ -1,5 +1,7 @@
 Snackoverload::Application.routes.draw do
 
+  resources :favorite_tags
+
   root to: 'questions#index'
   devise_for :users
   resources :users, only: [:index, :show]

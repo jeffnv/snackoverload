@@ -10,5 +10,7 @@ class User < ActiveRecord::Base
   
   has_many :questions, foreign_key: :asker_id
   has_many :answered_questions, foreign_key: :answerer_id, class_name: 'Answer'
+  has_many :favorite_tags
+  has_many :tags, through: :favorite_tags, source: :tag
   
 end

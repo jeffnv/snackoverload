@@ -1,1 +1,9 @@
 <%= render 'shared/questions_list', questions: @questions%>
+
+<script>
+  $('.tag').popover({html: true, trigger: 'hover', delay: {show: 500, hide: 1000}})
+  
+  $(document).on('click', '.tag-popover-fave', function(event){
+    
+  })
+</script

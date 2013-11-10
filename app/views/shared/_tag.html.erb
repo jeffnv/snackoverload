@@ -1,1 +1,6 @@
-<a class="tag" href="<%=tag_url(tag)%>"><%=tag.name%></a>
+<a class="tag" 
+ href="<%=tag_url(tag)%>" 
+ rel="popover"
+ data-content='<input data-id="<%=tag.id%>" type="checkbox" <%= "checked" if current_user && current_user.tags.find_by_id(tag.id)%> class="tag-popover-fave"><label>watched</label>'
+ 
+ ><%=tag.name%></a>

@@ -1,6 +1,6 @@
 Snackoverload::Application.routes.draw do
 
-  resources :favorite_tags
+  resources :favorite_tags, only: [:index, :create, :destroy]
 
   root to: 'questions#index'
   devise_for :users

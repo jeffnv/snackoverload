@@ -1,9 +1,31 @@
 <%= render 'shared/questions_list', questions: @questions%>
 
 <script>
-  $('.tag').popover({html: true, trigger: 'hover', delay: {show: 500, hide: 1000}})
+  $('.tag').popover({html: true, trigger: 'hover', delay: {show: 250, hide: 1000}})
   
   $(document).on('click', '.tag-popover-fave', function(event){
+    var checked = $(event.target).prop('checked');
+    var tag_id = parseInt($(event.target).data('id'));
     
+    if(checked){
+      $.ajax({
+        type: "POST",
+        url: "<%=favorite_tags_url%>",
+        data: {favorite_tag: {tag_id: tag_id}},
+        success: function(score){
+          $(event.target).prop('checked', true);
+          
+        }
+      })
+    } 
+    else{
+      $.ajax({
+        type: "DELETE",
+        url: "<%=root_url%>/favorite_tags/" + tag_id,
+        success: function(score){
+          $(event.target).prop('checked', false);
+        }
+      })
+    }
   })
 </script

@@ -1,0 +1,10 @@
+<% if user_signed_in?%>
+  <%tags = current_user.tags%>
+  <% if tags.count == 0 %>
+    <%=render 'shared/no_favorites'%>
+  <% else %>
+  <%=render 'shared/favorite_tags', tags: tags%>
+  <% end %>
+<% else %>
+<%=render 'shared/welcome_sidebar'%>
+<% end %>

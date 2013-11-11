@@ -6,6 +6,11 @@ votes, tags, and comments. I don't intend on implementing the non-essential
 features like chat, but the main stuff should be there. Hopefully. 
 
 _Stay hungry, everybody_ :)
+11/11/2013
+
+- [ ] Sidebar with favorite tags
+- [ ] Favoriting tag makes it show up in sidebar
+- [ ] Make sure all pages look ok with new sidebar layout
 
 11/9-10/2013
 

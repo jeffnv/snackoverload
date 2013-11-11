@@ -1,4 +1,9 @@
-<%= render 'shared/questions_list', questions: @questions%>
+<div class="col-xs-9">
+  <%= render 'shared/questions_list', questions: @questions%>
+</div>
+<div class="col-xs-3">
+  <%= render 'shared/sidebar'%>
+</div>
 
 <script>
   $('.tag').popover({html: true, trigger: 'hover', delay: {show: 250, hide: 1000}})

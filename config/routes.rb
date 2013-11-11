@@ -1,8 +1,8 @@
 Snackoverload::Application.routes.draw do
 
-  resources :favorite_tags, only: [:index, :create, :destroy]
 
   root to: 'questions#index'
+  resources :favorite_tags, only: [:index, :create, :destroy]
   devise_for :users
   resources :users, only: [:index, :show]
   resources :questions do
@@ -13,4 +13,5 @@ Snackoverload::Application.routes.draw do
   resources :comments, only: [:create, :destroy]
   get 'about', to: 'StaticPages#about'
   put 'votes', to: 'votes#update'
+  get 'guest', to: 'Users#guest_log_in'
 end

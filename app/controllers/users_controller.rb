@@ -15,6 +15,6 @@ class UsersController < ApplicationController
     end
     
     create_guest_user
-    redirect_to about_url
+    redirect_to root_url
   end
 end

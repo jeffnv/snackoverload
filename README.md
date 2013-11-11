@@ -8,9 +8,15 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 11/11/2013
 
-- [ ] Sidebar with favorite tags
+- [ ] BACKBONE!
+- [ ] Favoriting a tag should put it in the sidebar
+- [ ] Popup for non signed in users is different
+- [ ] Popup should have number of tagged questions
+- [ ] Popup should have number of tagging users
 - [ ] Favoriting tag makes it show up in sidebar
 - [ ] Make sure all pages look ok with new sidebar layout
+- [ ] Question show page has number of questions tagged and the tag itsself
+- [x] Sidebar with favorite tags
 
 11/9-10/2013
 
@@ -56,24 +62,21 @@ _Stay hungry, everybody_ :)
 
 
 Later
+
+- [ ] Custom rake task to cull guests
+- [ ] Dependent destroy for ^^^^^^^^^
 - [ ] Nice JavaScript feedback for stuff
-- [ ] Favoriting Tags
-- [ ] Hover over tag menu
-- [ ] Hover tag menu can favorite/unfavorite a tag
 - [ ] Hover over a tag and see links to google search, 
 - [ ] Fork on github
 - [ ] Don't allow empty answers/questions/comments
 - [ ] No need to show num of tagged articles for tags everywhere
-- [ ] Display tags in right sidebar
 - [ ] My Tags, newest, votes, no answers tabs
 - [ ] Pagination
 - [ ] Choosing an answer as correct
 - [ ] Limit body of question to x lines
-- [ ] Guest User Account
 - [ ] Modal's that pop up when you do stuff requiring login
 - [ ] Dropdown's when you hover over tags with stats
 - [ ] User profiles
-- [ ] Following tags
 - [ ] News feed of tags?
 - [ ] Make tests for model methods
 - [ ] Make tests for views
@@ -83,6 +86,13 @@ Later
 
 
 Completed....
+
+- [x] Favoriting Tags
+- [x] Hover over tag menu
+- [x] Hover tag menu can favorite/unfavorite a tag
+- [x] Display tags in right sidebar
+- [x] Guest User Account
+- [x] Following tags
 - [x] Set Up devise
 - [x] create rails project
 - [x] commit to github

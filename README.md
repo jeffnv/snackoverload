@@ -6,14 +6,20 @@ votes, tags, and comments. I don't intend on implementing the non-essential
 features like chat, but the main stuff should be there. Hopefully. 
 
 _Stay hungry, everybody_ :)
+11/12/2013
+
+- [ ] snackoverload click goes to #
+- [ ] tags page in backbone
+- [ ] users page in backbone
+- [ ] question show page in backbone
+
 11/11/2013
 
-- [ ] BACKBONE!
+- [x] BACKBONE!
 - [ ] Favoriting a tag should put it in the sidebar
 - [ ] Popup for non signed in users is different
 - [ ] Popup should have number of tagged questions
 - [ ] Popup should have number of tagging users
-- [ ] Favoriting tag makes it show up in sidebar
 - [ ] Make sure all pages look ok with new sidebar layout
 - [ ] Question show page has number of questions tagged and the tag itsself
 - [x] Sidebar with favorite tags

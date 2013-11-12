@@ -1,11 +1,20 @@
 Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
   routes: {
-    "":"questionIndex"
+    "":"questionIndex",
+    "tags/:id":"tagShow"
   },
   
   initialize: function(options){
     this.$main = options.$main;
     this.$sidebar = options.$sidebar;
+  },
+  
+  tagShow: function(id){
+    var questions = Snackoverload.questions.byTagId(parseInt(id));
+    var listView = new Snackoverload.Views.QuestionList({
+      collection: questions
+    });
+    this.switchMainView(listView);
   },
   
   questionIndex: function(){

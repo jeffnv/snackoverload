@@ -1,0 +1,16 @@
+<%var index = 0;%>
+<% tags.each(function(tag){ %>
+  <% if (index % COLCOUNT == 0){%>
+    <div class="row tag-index-row">
+  <%} %>
+    <div class="col-md-<%=12 / COLCOUNT%>">    
+      <div class="tag-index-col">
+        <a class="tag" href="#/tags/<%=tag.id%>"><%=tag.get('name')%></a> x <%=tag.get('tagged_questions_count')%>
+      </div>
+    </div>
+    <%if ((index + 1) % COLCOUNT == 0){%>
+  </div>
+  <%}%>
+  <%index++;%>
+<% }) %>
+

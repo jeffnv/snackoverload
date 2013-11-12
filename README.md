@@ -8,8 +8,8 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 11/12/2013
 
-- [ ] snackoverload click goes to #
-- [ ] tags page in backbone
+- [x] snackoverload click goes to #
+- [x] tags page in backbone
 - [ ] users page in backbone
 - [ ] question show page in backbone
 

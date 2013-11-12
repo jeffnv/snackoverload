@@ -31,6 +31,8 @@ gem 'devise'
 gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'debugger'
+gem 'backbone-on-rails'
+gem 'ejs'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

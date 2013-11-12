@@ -1,0 +1,1 @@
+Snackoverload.Models.Answer = Backbone.Model.extend({});

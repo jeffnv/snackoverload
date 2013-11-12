@@ -1,12 +1,19 @@
-<div class="col-xs-9">
+<div class="col-xs-9" id="main">
   <%= render 'shared/questions_list', questions: @questions%>
 </div>
-<div class="col-xs-3">
+<div class="col-xs-3" id="sidebar">
   <%= render 'shared/sidebar'%>
 </div>
 
+
 <script>
+  $(document).ready(function(){
+    Snackoverload.initialize();
+  });
+  
+  
   $('.tag').popover({html: true, trigger: 'hover', delay: {show: 250, hide: 1000}})
+  
   
   $(document).on('click', '.tag-popover-fave', function(event){
     var checked = $(event.target).prop('checked');

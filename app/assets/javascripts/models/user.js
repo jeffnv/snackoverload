@@ -1,0 +1,1 @@
+Snackoverload.Models.User = Backbone.Model.extend({});

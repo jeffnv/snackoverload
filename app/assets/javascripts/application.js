@@ -12,7 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require snackoverload
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .
 //= require bootstrap
 //= require chosen-jquery
 //= require serializeJSON
+//= require moment.js
+
+Backbone.View.prototype.close = function(){
+  if(this._children){
+    this._children.forEach(function(child){
+      child.close();
+    })
+  }
+  this.remove();
+  this.unbind(); //is this necessary?
+};

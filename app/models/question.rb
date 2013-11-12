@@ -10,6 +10,15 @@ class Question < ActiveRecord::Base
   
   belongs_to :asker, foreign_key: :asker_id, class_name: 'User'
   
+  def as_json(*args)
+    hash = super(*args)
+    hash.merge!({
+      "confirmed" => confirmed?,
+      "answered" => answered?,
+      "score" => score,
+    })
+  end
+  
   def confirmed?
     self.answers.where(chosen: true).count > 0 
   end

@@ -1,0 +1,23 @@
+<div class='row'>
+  <div class="col-xs-2">
+    <div class="question-stats">
+      <div class="right-point"></div>
+      <div class="question-vote-count"
+       ><span class='stat-number'><%=question.escape('score')%></span><br>votes</div>
+      <div 
+       class="question-vote-answer <%= question.get('confirmed') ? "confirmed" : ""%> 
+        <%= question.get('answered') ? "answered" : ""%>"
+       ><span class='stat-number'><%= question.get('answers').length%></span><br>answers
+      </div>
+  </div>
+  </div>
+
+  <div class="question col-xs-10">
+    <h2><a href="#"><%=question.escape('title')%></a></h2>
+    <p><%=question.escape('body')%></p>
+    <p class="question-tags"></p>
+    <p class="question-asker"></p>
+</div>
+  
+</div>
+<hr>

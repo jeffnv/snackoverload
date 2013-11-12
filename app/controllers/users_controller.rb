@@ -7,6 +7,12 @@ class UsersController < ApplicationController
   def index
     @COLCOUNT = 2
     @users = User.all
+    
+    respond_to do |format|
+      format.html
+      format.json {render json: @users}
+    end
+    
   end
   
   def guest_log_in

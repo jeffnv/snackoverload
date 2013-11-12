@@ -13,4 +13,21 @@ class User < ActiveRecord::Base
   has_many :favorite_tags
   has_many :tags, through: :favorite_tags, source: :tag
   
+  def gravatar_url
+      gravatar_id = Digest::MD5::hexdigest(self.email).downcase
+      "http://gravatar.com/avatar/#{gravatar_id}.png"
+  end
+  
+  def rep
+    (rand * 1000000).ceil
+  end
+  
+  def as_json(*args)
+    hash = super(*args)
+    hash.merge!({
+      "gravatar_url" => gravatar_url,
+      "rep" => rep
+    })
+  end
+  
 end

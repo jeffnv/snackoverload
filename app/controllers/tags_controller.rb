@@ -1,14 +1,13 @@
 class TagsController < ApplicationController
   def index
-
     if(params[:type])
       if(params[:type] == 'favorite')
-        @tags = current_user ? current_user.tags : Tag.all
+        @tags = current_user ? current_user.tags : Tag.includes(:favoriting_users, :tagged_questions)
       elsif(params[:type] == 'all')
-        @tags = Tag.all
+        @tags = Tag.includes(:favoriting_users, :tagged_questions)
       end
     else
-      @tags = Tag.all    
+      @tags = Tag.includes(:favoriting_users, :tagged_questions) 
     end
     
     @COLCOUNT = 3

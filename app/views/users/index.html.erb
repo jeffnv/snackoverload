@@ -4,7 +4,7 @@
     <%end %>
     <div class="col-md-<%=12 / @COLCOUNT%>">    
       <div class="user-index-col">
-        <div class="lil-gravatar"><%=image_tag avatar_url(user) + "?s=60"%></div>
+        <div class="lil-gravatar"><%=image_tag user.gravatar_url  + "?s=60"%></div>
         <a class="user" href="<%=user_url(user)%>"><%=user.email%></a>
         <p>Reputation: <%=random_rep%></p>
       </div>

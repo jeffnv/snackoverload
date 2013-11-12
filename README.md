@@ -10,7 +10,7 @@ _Stay hungry, everybody_ :)
 
 - [x] snackoverload click goes to #
 - [x] tags page in backbone
-- [ ] users page in backbone
+- [x] users page in backbone
 - [ ] question show page in backbone
 
 11/11/2013

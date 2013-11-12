@@ -9,12 +9,13 @@ window.Snackoverload = {
     Snackoverload.favoriteTags = new Snackoverload.Collections.Tags([], {type: 'favorite'});
     Snackoverload.questions = new Snackoverload.Collections.Questions();
     Snackoverload.tags = new Snackoverload.Collections.Tags([], {type: 'all'});
+    Snackoverload.users = new Snackoverload.Collections.Users();
     
     var favePromise = Snackoverload.favoriteTags.fetch();
     var questionPromise = Snackoverload.questions.fetch();
     var tagPromise = Snackoverload.tags.fetch();
-    
-    $.when(favePromise, questionPromise, tagPromise).then(function(){
+    var userPromise = Snackoverload.users.fetch();
+    $.when(favePromise, questionPromise, tagPromise, userPromise).then(function(){
       Snackoverload.router = new Snackoverload.Routers.SnackRouter({
         $main: $('#main'),
         $sidebar: $('#sidebar')

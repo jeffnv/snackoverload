@@ -1,0 +1,18 @@
+<%var index = 0;%>
+<%users.each(function(user){%>
+  <%if (index % COLCOUNT == 0){%>
+    <div class="row user-index-row">
+    <%} %>
+    <div class="col-md-<%=12 / COLCOUNT%>">    
+      <div class="user-index-col">
+        <div class="lil-gravatar"><img src="<%=user.get('gravatar_url') + "?s=60"%>"></img></div>
+        <a class="user" href="/#users/<%=user.id%>"><%=user.get('email')%></a>
+        <p>Reputation: <%=user.get('rep')%></p>
+      </div>
+    </div>
+    <%if ((index + 1) % COLCOUNT == 0){%><em></em>
+    </div>
+  <%} %>  
+  <%index++;%>  
+<% })%>
+

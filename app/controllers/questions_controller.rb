@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   def index
-    @questions = Question.all
+    @questions = Question.includes(:tags, :votes, :asker, :answers)
     respond_to do |format|
       format.html
       format.json {render json: @questions, include:[ :tags, :votes, :asker, :answers]}

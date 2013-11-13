@@ -1,0 +1,13 @@
+<%var uniquedata = klass + '_' + id%>
+<div class="vote up <%=my_vote == 1 ? "lit" : ""%>" 
+  data-type="upvote" data-votable="<%=uniquedata%>">
+  
+</div>
+
+<div class="score" data-votable="<%=uniquedata%>">
+  <%=score%>
+</div>
+
+<div class="vote down <%=my_vote == -1 ? "lit" : ""%>" 
+  data-type="downvote" data-votable="<%=uniquedata%>">
+</div>

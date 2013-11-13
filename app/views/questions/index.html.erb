@@ -7,6 +7,10 @@
 
 
 <script>
+
+  <% if current_user %>
+    Snackoverload.currentUserId = <%=current_user.id%>
+  <% end %>
   $(document).ready(function(){
     Snackoverload.initialize();
   });

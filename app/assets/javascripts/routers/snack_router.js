@@ -4,6 +4,7 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     "tags/:id":"tagShow",
     "tags":"tagIndex",
     "users":"userIndex",
+    "questions/:id": "questionShow"
   },
   
   initialize: function(options){
@@ -64,6 +65,12 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
       collection: Snackoverload.users
     });
     
+    this.switchMainView(mainView);
+  },
+  
+  questionShow: function(id){
+    var question = Snackoverload.questions.get(id);
+    var mainView = new Snackoverload.Views.QuestionShow({model: question});
     this.switchMainView(mainView);
   },
   

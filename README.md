@@ -8,10 +8,15 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 11/12/2013
 
+- [ ] question answers
+- [ ] comments for answers
+- [x] comments for questions
+- [x] tags for questions
 - [x] snackoverload click goes to #
 - [x] tags page in backbone
 - [x] users page in backbone
-- [ ] question show page in backbone
+- [x] question title and data
+- [x] question vote block
 
 11/11/2013
 

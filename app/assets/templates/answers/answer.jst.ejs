@@ -1,0 +1,6 @@
+<li>
+  <p class="lead"><%=answer.escape('body')%></p>
+  <a href="#users/<%=answer.get('answerer_id')%>"><%=answer.get('answerer').email%>
+  </a>
+  <%=moment(answer.get('created_at')).fromNow()%>
+</li>

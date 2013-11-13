@@ -4,4 +4,12 @@ class Comment < ActiveRecord::Base
   
   belongs_to :commentable, polymorphic: true
   belongs_to :commenter, foreign_key: :commenter_id, class_name: 'User'
+  
+  def as_json(*args)
+    hash = super(*args)
+    hash.merge!({
+      "commenter_email" => self.commenter.email
+    })
+  end
+  
 end

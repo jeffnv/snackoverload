@@ -1,0 +1,25 @@
+<div class="question row">
+  <div class="page-header">
+    <h1><%=question.escape('title')%></h1>
+  </div>  
+  
+  <div class="col-xs-1">
+    <div class="vote-block"></div>
+  </div>
+  
+  <div class="col-xs-11">
+    <div class="question-content">  
+      <p class="lead"><%=question.escape('body')%></p>
+      <p class="question-tags"></p>
+      <p class="question-asker"></p>
+    </div> <!-- question content -->
+    <div class="comments" id="question-comments"></div>
+  </div><!-- question -->
+  
+  <hr>
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-11 answers"></div>
+    <hr>
+  </div>
+</div>

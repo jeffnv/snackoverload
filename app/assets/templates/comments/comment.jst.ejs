@@ -1,0 +1,5 @@
+<li><%=comment.get('body')%> - 
+    <a href="#users/<%=comment.get('commenter_id')%>"><%=comment.get('commenter').email%>
+    </a>
+    <%=moment(comment.get('created_at')).fromNow()%>
+</li>

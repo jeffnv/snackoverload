@@ -1,11 +1,11 @@
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
     <div class="navbar-header left-space">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<%=root_url%>">snackoverload</a>
+      <a class="navbar-brand" href="#"><%= image_tag 'brand.png', size: "150x36", class:"logo"%></a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -14,7 +14,7 @@
         <li><a href="#users">Users</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<%=about_url%>">About</a></li>
+        <li><a href="#about">About</a></li>
         
         <% if user_signed_in? %>
           <li class="dropdown">

@@ -6,10 +6,20 @@ votes, tags, and comments. I don't intend on implementing the non-essential
 features like chat, but the main stuff should be there. Hopefully. 
 
 _Stay hungry, everybody_ :)
+
+11/13/2013
+- [ ] tag favoriting
+- [ ] voting
+- [ ] answering
+- [ ] comments
+- [ ] backbone new question page
+- [x] backbone the about page
+- [x] logo
+
 11/12/2013
 
-- [ ] question answers
-- [ ] comments for answers
+- [x] question answers
+- [x] comments for answers
 - [x] comments for questions
 - [x] tags for questions
 - [x] snackoverload click goes to #

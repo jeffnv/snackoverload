@@ -1,2 +1,8 @@
 <!-- should be a link to the show page -->
-<a class="tag" href="#/tags/<%=tag.id%>" ><%=tag.get('name')%></a>
+<%var checked = Snackoverload.favoriteTags.pluck('id').indexOf(tag.id) != -1;%>
+<a class="tag" 
+   href="#/tags/<%=tag.id%>" 
+   rel="popover"
+   data-content='<input data-id="<%=tag.id%>" type="checkbox" <%=checked ? "checked" : "" %> class="tag-popover-fave"><label>favorite</label>'
+ 
+   ><%=tag.get('name')%></a>

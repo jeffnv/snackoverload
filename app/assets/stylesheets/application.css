@@ -8,9 +8,9 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_self
  *= require_tree .
- *= require bootstrap
 *= require chosen
  */
 
@@ -21,3 +21,20 @@
 .chosen-select{
   width: 50%;
 }
+
+.navbar-default .navbar-brand{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+  color: #33CC66;
+}
+

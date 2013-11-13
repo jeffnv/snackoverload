@@ -4,7 +4,8 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     "tags/:id":"tagShow",
     "tags":"tagIndex",
     "users":"userIndex",
-    "questions/:id": "questionShow"
+    "questions/:id": "questionShow",
+    "about": "about"
   },
   
   initialize: function(options){
@@ -17,7 +18,13 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     var listView = new Snackoverload.Views.QuestionList({
       collection: questions
     });
+    
+    var tagView = new Snackoverload.Views.SidebarTags({
+      collection: Snackoverload.favoriteTags
+    });
+    
     this.switchMainView(listView);
+    this.switchSideBarView(tagView);
   },
   
   questionIndex: function(){
@@ -66,6 +73,13 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     });
     
     this.switchMainView(mainView);
+    this.switchSideBarView();
+  },
+  
+  about: function(){
+    var mainView = new Snackoverload.Views.About();
+    this.switchMainView(mainView);
+    this.switchSideBarView();
   },
   
   questionShow: function(id){
@@ -88,7 +102,11 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
       this._currentSidebar.close();
     }
     
-    this._currentSidebar = view;
-    this.$sidebar.html(view.render().$el);
+    this._currentSidebar = null;
+    if(view){
+      this.$sidebar.html(view.render().$el);
+    } else {
+      this.$sidebar.html('');
+    }
   },
 });

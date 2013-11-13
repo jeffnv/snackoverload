@@ -1,4 +1,7 @@
 Snackoverload.Views.QuestionList = Backbone.View.extend({
+  events: {
+    "click .tag-popover-fave": "favoriteTagClicked",
+  },
   template: JST['questions/question_list'],
   render: function(){
     var $questions = $("<div class=\"question-list\"></div>");
@@ -11,7 +14,8 @@ Snackoverload.Views.QuestionList = Backbone.View.extend({
       
       var $tags = $question.find('.question-tags');
       question.get('tags').each(function(tag){
-        $tags.append(JST['tags/tag']({tag: tag}))
+        var $tag = JST['tags/tag']({tag: tag});
+        $tags.append($tag);
       })
       
       var $asker = $question.find('.question-asker');
@@ -21,6 +25,34 @@ Snackoverload.Views.QuestionList = Backbone.View.extend({
       $questions.append($question);
     })
     this.$el.html($questions);
+    this.$el.find('.tag').popover({html: true, trigger: 'hover', delay: {show: 250, hide: 1000}})
     return this;
-  }
+  },
+  
+  favoriteTagClicked: function(event){
+    var checkbox = $(event.currentTarget);
+    var id = checkbox.data('id');
+    var adding = checkbox.prop('checked');
+    var that = this;
+    if(adding){
+      $.ajax({
+        type: "POST",
+        url: "favorite_tags",
+        data: {favorite_tag: {tag_id: id}},
+        success: function(tag){
+          Snackoverload.favoriteTags.add(Snackoverload.tags.findWhere({id: tag.tag_id}));
+          that.render();
+        }
+      })
+    }else{
+      $.ajax({
+        type: "DELETE",
+        url: "favorite_tags/" + id,
+        success: function(tag){
+          Snackoverload.favoriteTags.remove(Snackoverload.tags.findWhere({id: tag.tag_id}));
+          that.render();
+        }
+      })
+    }
+  },
 })

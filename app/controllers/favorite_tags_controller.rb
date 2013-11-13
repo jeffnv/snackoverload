@@ -19,9 +19,9 @@ class FavoriteTagsController < ApplicationController
     @favorite_tag = FavoriteTag.find_by_tag_id_and_user_id(tag_id, user_id)
     if @favorite_tag
       @favorite_tag.delete
-      render json: "favorite tag deleted"    
+      render json: @favorite_tag    
     else
-      render json: "favorite tag not found"
+      render json: "favorite tag not found".to_json
     end
   end
 end

@@ -8,7 +8,7 @@ features like chat, but the main stuff should be there. Hopefully.
 _Stay hungry, everybody_ :)
 
 11/13/2013
-- [ ] tag favoriting
+- [x] tag favoriting
 - [ ] voting
 - [ ] answering
 - [ ] comments

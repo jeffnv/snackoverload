@@ -1,4 +1,7 @@
 Snackoverload.Views.QuestionList = Backbone.View.extend({
+  initialize:function(){
+    this.listenTo(this.collection, "add remove change", this.render);
+  },
   events: {
     "click .tag-popover-fave": "favoriteTagClicked",
   },

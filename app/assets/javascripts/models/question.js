@@ -7,6 +7,7 @@ Snackoverload.Models.Question = Backbone.Model.extend({
     });
     data.answers = new Snackoverload.Collections.Answers(data.answers);
     data.comments = new Snackoverload.Collections.Comments(data.comments);
+    data.votes = new Snackoverload.Collections.Votes(data.votes);
     return data;
   }
 });

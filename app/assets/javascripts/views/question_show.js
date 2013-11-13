@@ -1,4 +1,7 @@
 Snackoverload.Views.QuestionShow = Backbone.View.extend({
+  events:{
+    "click .vote": "vote"
+  },
   template: JST['questions/question'],
   render: function(){
     this.$el.html(this.template({question: this.model}));
@@ -57,14 +60,63 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     return $answers;
   },
   
-  getCurrentUserVote: function(){
+  vote: function(event){
     if(Snackoverload.currentUserId){
-      var votes = this.model.get('votes');
-      for(var i = 0; i < votes.length; i++){
-        if(votes[i].voter_id == Snackoverload.currentUserId){
-          return votes[i].value
+      var my_id = Snackoverload.currentUserId;
+      var that = this;
+      var upButton = $('.vote.up')
+      var downButton = $('.vote.down')
+      var up = $(event.currentTarget).data('type') === "upvote";
+      var votableString = $(event.currentTarget).data('votable');
+      var votableType = votableString.split('_')[0];
+      var votableID = parseInt(votableString.split('_')[1]);
+      var votesURL = "votes";
+      var newVote = {vote: {
+        votable_type: votableType,
+        votable_id: votableID,
+        value: up ? 1 : -1
+      }};
+    
+  
+      console.log(newVote);
+      $.ajax({
+        type: "PUT",
+        url: votesURL,
+        data: newVote,
+        success: function(score){
+          var allVotes = that.model.get('votes');
+          var myVote = allVotes.findWhere({voter_id: my_id});
+          if(myVote){
+            myVote.set('value', score.new_vote);
+          }
+          else{
+            allVotes.add(new Snackoverload.Models.Vote({
+              voter_id: my_id,
+              votable_type: votableType,
+              votable_id: votableID,
+              value: score.new_vote,
+              
+            }))
+          }
+          
+          that.model.set('score', score.score);
+          that.render();
+      
         }
-      }
+      })
+    }else{
+      //not logged in
+    }
+
+  }, 
+  
+  getCurrentUserVote: function(){
+    if(Snackoverload.currentUserId) {
+      var votes = this.model.get('votes');
+      var my_vote = votes.findWhere({voter_id: Snackoverload.currentUserId });
+        if(my_vote){
+          return my_vote.get('value');
+        }
     }
     return 0;
   },

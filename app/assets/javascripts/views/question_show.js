@@ -1,4 +1,7 @@
 Snackoverload.Views.QuestionShow = Backbone.View.extend({
+  initialize: function(){
+    this.listenTo(this.model.get('comments'), "add remove sync", this.render);
+  },
   events:{
     "click .vote": "vote",
     "submit .comment-form": "comment"
@@ -112,7 +115,16 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
   }, 
   
   comment: function(event){
-    event.preventDefault();
+    event.preventDefault();    
+    var commentModel = new Snackoverload.Models.Comment($(event.target).serializeJSON().comment);
+    var that = this;
+    commentModel.save({}, { 
+      success: function (model) {
+        console.log('asdfasdf')
+        console.log(model)
+        that.model.get('comments').add(model);
+      }
+    })
   },
   
   getCurrentUserVote: function(){

@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
           :votes, 
           :asker, 
           { :answers => { :include => [{ :comments => { :include => [:commenter] }}, :answerer]}},
-          { :comments => { :include => [:commenter] }}
+          { :comments => { :methods => [:commenter_email] }}
         ]
       end
     end
@@ -46,4 +46,5 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
   end
+  
 end

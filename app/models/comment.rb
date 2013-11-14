@@ -8,8 +8,12 @@ class Comment < ActiveRecord::Base
   def as_json(*args)
     hash = super(*args)
     hash.merge!({
-      "commenter_email" => self.commenter.email
+      "commenter_email" => self.commenter_email
     })
+  end
+  
+  def commenter_email
+    self.commenter.email
   end
   
 end

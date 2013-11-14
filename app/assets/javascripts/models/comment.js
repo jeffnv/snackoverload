@@ -1,1 +1,3 @@
-Snackoverload.Models.Comment = Backbone.Model.extend({});
+Snackoverload.Models.Comment = Backbone.Model.extend({
+  urlRoot: '/comments'
+});

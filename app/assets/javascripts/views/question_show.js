@@ -1,6 +1,7 @@
 Snackoverload.Views.QuestionShow = Backbone.View.extend({
   events:{
-    "click .vote": "vote"
+    "click .vote": "vote",
+    "submit .comment-form": "comment"
   },
   template: JST['questions/question'],
   render: function(){
@@ -109,6 +110,10 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     }
 
   }, 
+  
+  comment: function(event){
+    event.preventDefault();
+  },
   
   getCurrentUserVote: function(){
     if(Snackoverload.currentUserId) {

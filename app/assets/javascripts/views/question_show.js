@@ -28,39 +28,43 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     
     var $questionComments = this.$el.find("#question-comments");
     
-    $questionComments.html(this.addComments(
-      'Question', 
-      this.model.id, 
-      this.model.get('comments'))
-    )
+    var questionCommentsView = new Snackoverload.Views.Comments({
+      collection: this.model.get('comments'), 
+      commentable_id: this.model.get('id'), 
+      commentable_type: 'Question'
+    });
     
+    $questionComments.html(questionCommentsView.render().$el.html())
     this.$el.find('.answers').append(this.addAnswers(this.model.get('answers')).html())
     
     return this;
   },  
   
   addComments:function(klass, id, comments){
-    var $comments = $(JST['comments/comments']({klass: klass, id: id}));
-    
-    comments.each(function(comment){
-      var $commentList = $comments.find('.comments-list');
-      var renderedContent = JST['comments/comment']({comment: comment})
-      $commentList.append(renderedContent)
-    })
-    return $comments.html();
+    var commentView = new Snackoverload.Views.Comments({collection: comments, commentable_id: id, commentable_type: klass})
+    return commentView.render().$el;
   },
   
   
   addAnswers:function(answers){
     var that = this;
-    var $answers = $('<div></div>').append($(JST['answers/answers']({answers: answers})));
-    var $answerlist = $answers.find('.answer-list');
+    var $answers = $('<div></div>')
+    $answers.append( $(JST['answers/answers']({answers: answers})));
     
+    var $answerlist = $answers.find('.answer-list');
     answers.each(function(answer){
       var $answer = $(JST['answers/answer']({answer: answer}));
-      $answer.append(that.addComments("Answer", answer.id, answer.get('comments')));
+      var answerCommentsView = new Snackoverload.Views.Comments({
+        collection: answer.get('comments'), 
+        commentable_id: answer.id, 
+        commentable_type: "Answer"
+      });
+
+      $answer.find('.answer-comments').html(answerCommentsView.render().$el.html());
+
       $answerlist.append($answer);
-    })
+    });
+    
     return $answers;
   },
   
@@ -116,15 +120,26 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
   
   comment: function(event){
     event.preventDefault();    
-    var commentModel = new Snackoverload.Models.Comment($(event.target).serializeJSON().comment);
+    var payload = $(event.target).serializeJSON().comment;
+    var commentModel = new Snackoverload.Models.Comment(payload.comment);
+    var type = payload.commentable_type;
+    var id = payload.commentable_id;
     var that = this;
     commentModel.save({}, { 
       success: function (model) {
-        console.log('asdfasdf')
-        console.log(model)
-        that.model.get('comments').add(model);
+        that.commentList(type, id).add(model);
       }
     })
+  },
+  
+  commentList: function(type, id){
+    if(type == "Question"){
+      return this.model.get('comments');
+    } else {
+      var answers = this.model.get('answers');
+      var answer = answers.findWhere({id: parseInt(id)});
+      return answer.get('comments');
+    }
   },
   
   getCurrentUserVote: function(){

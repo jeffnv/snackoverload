@@ -9,9 +9,9 @@ _Stay hungry, everybody_ :)
 
 11/13/2013
 - [x] tag favoriting
-- [ ] voting
+- [x] voting
 - [ ] answering
-- [ ] comments
+- [x] comments
 - [ ] backbone new question page
 - [x] backbone the about page
 - [x] logo

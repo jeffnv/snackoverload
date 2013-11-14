@@ -1,12 +1,11 @@
-<%var uniqueCode = klass + '_' + id %>
 <div class="comments">  
-  <ul class="comments-list" data-commentable="<%=uniqueCode%>"></ul>
+  <ul class="comments-list" data-commentable="<%=commentable_type%>_<%commentable_id%>"></ul>
   <% if(Snackoverload.currentUserId){%>
     <form class="comment-form" accept-charset="utf-8">
       <input type="hidden" 
-       name="comment[commentable_id]" value="<%=id%>">
+       name="comment[commentable_id]" value="<%=commentable_id%>">
       <input type="hidden" 
-       name="comment[commentable_type]" value="<%=klass%>">
+       name="comment[commentable_type]" value="<%=commentable_type%>">
      
       <label for="comment">Comment</label>
       <input type="text" name="comment[body]" id="comment" 

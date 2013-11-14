@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
           :tags, 
           :votes, 
           :asker, 
-          { :answers => { :include => [{ :comments => { :include => [:commenter] }}, :answerer]}},
+          { :answers => { :include => [{ :comments => { :methods => [:commenter_email] }}, :answerer]}},
           { :comments => { :methods => [:commenter_email] }}
         ]
       end

@@ -7,6 +7,15 @@ features like chat, but the main stuff should be there. Hopefully.
 
 _Stay hungry, everybody_ :)
 
+11/14/13
+
+-[ ] hey dylan
+-[ ] answer a question
+-[ ] random basically gravatar
+-[ ] pg full text search while asking question - do it
+-[ ] user page clicks go nowhere
+-[ ] more snackage 
+
 11/13/2013
 - [x] tag favoriting
 - [x] voting

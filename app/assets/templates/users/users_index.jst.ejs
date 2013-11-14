@@ -5,7 +5,7 @@
     <%} %>
     <div class="col-md-<%=12 / COLCOUNT%>">    
       <div class="user-index-col">
-        <div class="lil-gravatar"><img src="<%=user.get('gravatar_url') + "?s=60"%>"></img></div>
+        <div class="lil-gravatar"><img src="<%=user.get('gravatar_url') + "&s=60"%>"></img></div>
         <a class="user" href="/#users/<%=user.id%>"><%=user.get('email')%></a>
         <p>Reputation: <%=user.get('rep')%></p>
       </div>

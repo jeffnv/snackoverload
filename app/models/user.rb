@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   
   def gravatar_url
       gravatar_id = Digest::MD5::hexdigest(self.email).downcase
-      "http://gravatar.com/avatar/#{gravatar_id}.png"
+      "http://gravatar.com/avatar/#{gravatar_id}.png?d=identicon"
   end
   
   def rep

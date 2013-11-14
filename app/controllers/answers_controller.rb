@@ -5,11 +5,10 @@ class AnswersController < ApplicationController
     @answer.question_id = params[:question_id]
     @answer.answerer_id = current_user.id
     
-    unless @answer.save
-      flash[:errors] = @answer.errors.full_messages
-    end                        
-    @question = Question.find(params[:question_id])
-    render 'questions/show'    
-    
+    if @answer.save
+      render json: @answer, :include => [:answerer,{ :comments => { :methods => [:commenter_email] }}]
+    else
+      render json: @answer.errors.full_messages, status: :unprocessable_entity
+    end 
   end
 end

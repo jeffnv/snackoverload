@@ -31,34 +31,14 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     });
     
     $questionComments.html(questionCommentsView.render().$el);
-    this.$el.find('.answers').append(this.addAnswers(this.model.get('answers')))
     
+    var answersView = new Snackoverload.Views.Answers({
+      collection: this.model.get('answers'),
+      questionID: this.model.id,
+    });
+    this.$el.find('.answers').append(answersView.render().$el)
     return this;
   },  
-  
-  
-  
-  addAnswers:function(answers){
-    var that = this;
-    var $answers = $('<div></div>')
-    $answers.append( $(JST['answers/answers']({answers: answers})));
-    
-    var $answerlist = $answers.find('.answer-list');
-    answers.each(function(answer){
-      var $answer = $(JST['answers/answer']({answer: answer}));
-      var answerCommentsView = new Snackoverload.Views.Comments({
-        collection: answer.get('comments'), 
-        commentable_id: answer.id, 
-        commentable_type: "Answer"
-      });
-
-      $answer.find('.answer-comments').html(answerCommentsView.render().$el);
-
-      $answerlist.append($answer);
-    });
-    
-    return $answers;
-  },
   
   vote: function(event){
     if(Snackoverload.currentUserId){

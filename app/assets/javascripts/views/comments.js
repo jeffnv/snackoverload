@@ -5,12 +5,8 @@ Snackoverload.Views.Comments = Backbone.View.extend({
   
   events:{
     "submit .comment-form": "comment",
-    "click .hey-dylan": "test"
   },
   
-  test: function(event){
-    alert('asdf');
-  },
   initialize: function(options){
     this.commentable_type = options.commentable_type;
     this.commentable_id= options.commentable_id;

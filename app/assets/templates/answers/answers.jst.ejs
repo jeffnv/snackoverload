@@ -1,2 +1,14 @@
-<h2><%=answers.length%> answers</h2>
+<h2><%=answerCount%> answers</h2>
 <ul class="answer-list"></ul>
+<hr>
+<h2>Have the Answer?</h2>
+<% if(Snackoverload.currentUserId){%>
+  <form id="answer-form" url="#">
+    <input type="hidden" name="answer[question_id]" value="<%=questionID%>">
+    <textarea class="form-control" placeholder="well?" name="answer[body]"></textarea>
+    <br>
+    <button id="answer-button" class="btn btn-default" >Submit Answer</button>
+  </form>
+<%}else{%>
+  <h3><a href="/users/sign_in">log in, and post it!</a></h3>
+<%}%>

@@ -1,10 +1,6 @@
 Snackoverload.Views.QuestionShow = Backbone.View.extend({
-  initialize: function(){
-    this.listenTo(this.model.get('comments'), "add remove sync", this.render);
-  },
   events:{
     "click .vote": "vote",
-    "submit .comment-form": "comment"
   },
   template: JST['questions/question'],
   render: function(){
@@ -34,16 +30,12 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
       commentable_type: 'Question'
     });
     
-    $questionComments.html(questionCommentsView.render().$el.html())
-    this.$el.find('.answers').append(this.addAnswers(this.model.get('answers')).html())
+    $questionComments.html(questionCommentsView.render().$el);
+    this.$el.find('.answers').append(this.addAnswers(this.model.get('answers')))
     
     return this;
   },  
   
-  addComments:function(klass, id, comments){
-    var commentView = new Snackoverload.Views.Comments({collection: comments, commentable_id: id, commentable_type: klass})
-    return commentView.render().$el;
-  },
   
   
   addAnswers:function(answers){
@@ -60,7 +52,7 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
         commentable_type: "Answer"
       });
 
-      $answer.find('.answer-comments').html(answerCommentsView.render().$el.html());
+      $answer.find('.answer-comments').html(answerCommentsView.render().$el);
 
       $answerlist.append($answer);
     });
@@ -117,30 +109,6 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     }
 
   }, 
-  
-  comment: function(event){
-    event.preventDefault();    
-    var payload = $(event.target).serializeJSON().comment;
-    var commentModel = new Snackoverload.Models.Comment(payload.comment);
-    var type = payload.commentable_type;
-    var id = payload.commentable_id;
-    var that = this;
-    commentModel.save({}, { 
-      success: function (model) {
-        that.commentList(type, id).add(model);
-      }
-    })
-  },
-  
-  commentList: function(type, id){
-    if(type == "Question"){
-      return this.model.get('comments');
-    } else {
-      var answers = this.model.get('answers');
-      var answer = answers.findWhere({id: parseInt(id)});
-      return answer.get('comments');
-    }
-  },
   
   getCurrentUserVote: function(){
     if(Snackoverload.currentUserId) {

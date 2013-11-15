@@ -9,7 +9,7 @@ window.Snackoverload = {
     Snackoverload.favoriteTags = new Snackoverload.Collections.Tags([], {type: 'favorite'});
     Snackoverload.questions = new Snackoverload.Collections.Questions();
     Snackoverload.tags = new Snackoverload.Collections.Tags([], {type: 'all'});
-    Snackoverload.users = new Snackoverload.Collections.Users();
+    Snackoverload.users = new Snackoverload.Collections.Users(Snackoverload.users);
     
     var favePromise = Snackoverload.favoriteTags.fetch();
     var questionPromise = Snackoverload.questions.fetch();

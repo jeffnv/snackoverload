@@ -9,14 +9,15 @@ _Stay hungry, everybody_ :)
 
 11/14/13
 
--[ ] random basically gravatar
--[ ] pg full text search while asking question - do it
--[ ] user page clicks go nowhere
--[ ] more snackage 
--[ ] favorite tags hr
--[x] submitting clears forms
--[x] hey dylan
--[x] answer a question
+- [ ] user page clicks go nowhere
+- [ ] usr profiles backbone
+- [ ] more snackage 
+- [ ] tags page should allow hover fave
+- [x] random basically gravatar
+- [x] favorite tags hr
+- [x] submitting clears forms
+- [x] hey dylan
+- [x] answer a question
 
 11/13/2013
 
@@ -96,6 +97,7 @@ _Stay hungry, everybody_ :)
 
 Later
 
+- [ ] pg full text search while asking question - do it
 - [ ] Custom rake task to cull guests
 - [ ] Dependent destroy for ^^^^^^^^^
 - [ ] Nice JavaScript feedback for stuff

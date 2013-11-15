@@ -5,7 +5,8 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     "tags":"tagIndex",
     "users":"userIndex",
     "questions/:id": "questionShow",
-    "about": "about"
+    "about": "about",
+    "users/:id": "userShow"
   },
   
   initialize: function(options){
@@ -54,14 +55,14 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
   },
   
   tagIndex: function(){
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags,
-    });
+
     
     var listView = new Snackoverload.Views.TagsIndex({
       collection: Snackoverload.tags
     });
-    
+    var tagView = new Snackoverload.Views.SidebarTags({
+      collection: Snackoverload.favoriteTags,
+    });
     this.switchSideBarView(tagView);
     this.switchMainView(listView);
   },
@@ -70,6 +71,16 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     
     var mainView = new Snackoverload.Views.UsersIndex({
       collection: Snackoverload.users
+    });
+    
+    this.switchMainView(mainView);
+    this.switchSideBarView();
+  },
+  
+  userShow: function(id){
+    
+    var mainView = new Snackoverload.Views.User({
+      model: Snackoverload.users.get(id)
     });
     
     this.switchMainView(mainView);
@@ -86,6 +97,11 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     var question = Snackoverload.questions.get(id);
     var mainView = new Snackoverload.Views.QuestionShow({model: question});
     this.switchMainView(mainView);
+    
+    var tagView = new Snackoverload.Views.SidebarTags({
+      collection: Snackoverload.favoriteTags,
+    });
+    this.switchSideBarView(tagView);
   },
   
   

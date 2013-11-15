@@ -20,39 +20,23 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
       collection: questions
     });
     
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags
-    });
-    
+
     this.switchMainView(listView);
-    this.switchSideBarView(tagView);
+    this.showFaveTags();
   },
   
   questionIndex: function(){
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags
-    });
+
     
     var listView = new Snackoverload.Views.QuestionList({
       collection: Snackoverload.questions
     });
     
-    this.switchSideBarView(tagView);
+
     this.switchMainView(listView);
+    this.showFaveTags();
   },
   
-  snackIndex: function(){
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags,
-    });
-    
-    var listView = new Snackoverload.Views.QuestionList({
-      collection: Snackoverload.questions
-    });
-    
-    this.switchSideBarView(tagView);
-    this.switchMainView(listView);
-  },
   
   tagIndex: function(){
 
@@ -60,11 +44,8 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     var listView = new Snackoverload.Views.TagsIndex({
       collection: Snackoverload.tags
     });
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags,
-    });
-    this.switchSideBarView(tagView);
     this.switchMainView(listView);
+    this.showFaveTags();
   },
   
   userIndex: function(){
@@ -74,7 +55,7 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     });
     
     this.switchMainView(mainView);
-    this.switchSideBarView();
+    this.showFaveTags();
   },
   
   userShow: function(id){
@@ -84,7 +65,7 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     });
     
     this.switchMainView(mainView);
-    this.switchSideBarView();
+    this.showFaveTags();
   },
   
   about: function(){
@@ -98,10 +79,7 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     var mainView = new Snackoverload.Views.QuestionShow({model: question});
     this.switchMainView(mainView);
     
-    var tagView = new Snackoverload.Views.SidebarTags({
-      collection: Snackoverload.favoriteTags,
-    });
-    this.switchSideBarView(tagView);
+    this.showFaveTags();
   },
   
   
@@ -113,6 +91,20 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     this._currentMainView = view;
     this.$main.html(view.render().$el);
   },
+  
+  showFaveTags: function(){
+    if(Snackoverload.currentUserId){
+      var tagView = new Snackoverload.Views.SidebarTags({
+        collection: Snackoverload.favoriteTags,
+      });
+      this.switchSideBarView(tagView);
+    }
+    else{
+      var aboutSidebar = new Snackoverload.Views.AboutSidebar();
+      this.$sidebar.html(aboutSidebar.render().$el);
+    }
+  },
+  
   switchSideBarView: function(view){
     if(this._currentSidebar){
       this._currentSidebar.close();

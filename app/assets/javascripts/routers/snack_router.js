@@ -119,10 +119,16 @@ Snackoverload.Routers.SnackRouter = Backbone.Router.extend({
     }
     
     this._currentSidebar = null;
-    if(view){
-      this.$sidebar.html(view.render().$el);
-    } else {
-      this.$sidebar.html('');
+    if(Snackoverload.currentUserId){
+      if(view){
+        this.$sidebar.html(view.render().$el);
+      } else {
+        this.$sidebar.html('');
+      }
+    }
+    else{
+      var aboutSidebar = new Snackoverload.Views.AboutSidebar();
+      this.$sidebar.html(aboutSidebar.render().$el);
     }
   },
 });

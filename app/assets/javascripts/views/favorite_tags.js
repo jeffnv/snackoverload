@@ -6,10 +6,15 @@ Snackoverload.Views.SidebarTags = Backbone.View.extend({
   
   render: function(){
     var that = this;
-    that.$el.html(this.template())
-    this.collection.each(function(tag){
-      that.$el.append(JST['tags/tag']({tag: tag}))
-    })
+    that.$el.html(this.template());
+    if(this.collection.length > 0){
+      this.collection.each(function(tag){
+        that.$el.append(JST['tags/tag']({tag: tag}))
+      })
+    } else{
+      that.$el.append('Would go here if you had some! Hover over a tag to add it to favorites!');
+    }
+
     return this;
   },
   

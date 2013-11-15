@@ -9,10 +9,10 @@ _Stay hungry, everybody_ :)
 
 11/14/13
 
-- [ ] user page clicks go nowhere
-- [ ] usr profiles backbone
-- [ ] more snackage 
 - [ ] tags page should allow hover fave
+- [x] user page clicks go nowhere
+- [x] usr profiles backbone
+- [x] more snackage 
 - [x] random basically gravatar
 - [x] favorite tags hr
 - [x] submitting clears forms

@@ -14,8 +14,13 @@ Snackoverload.Views.Answers = Backbone.View.extend({
       questionID: this.questionID,
     }));
     var $answerlist = this.$el.find('.answer-list');
+    var chosenAnswer = this.collection.chosenAnswer();
     this.collection.each(function(answer){
-      var $answer = $(JST['answers/answer']({answer: answer}));
+      var $answer = $(JST['answers/answer']({
+        answer: answer, 
+        chosenAnswer: chosenAnswer
+      }));
+      
       var answerCommentsView = new Snackoverload.Views.Comments({
         collection: answer.get('comments'), 
         commentable_id: answer.id, 
@@ -26,6 +31,9 @@ Snackoverload.Views.Answers = Backbone.View.extend({
 
       $answerlist.append($answer);
     });
+    
+    //separate answer form
+    //only show if not answered
     
     return this;
   },

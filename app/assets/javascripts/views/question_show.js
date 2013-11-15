@@ -40,6 +40,8 @@ Snackoverload.Views.QuestionShow = Backbone.View.extend({
     return this;
   },  
   
+
+  
   vote: function(event){
     if(Snackoverload.currentUserId){
       var my_id = Snackoverload.currentUserId;

@@ -9,5 +9,9 @@ Snackoverload.Models.Question = Backbone.Model.extend({
     data.comments = new Snackoverload.Collections.Comments(data.comments);
     data.votes = new Snackoverload.Collections.Votes(data.votes);
     return data;
-  }
+  },
+  
+  answered: function(){
+    return this.get('answers').chosenAnswer();
+  },
 });

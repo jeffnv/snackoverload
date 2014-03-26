@@ -23,6 +23,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'debugger'
 end
 gem 'jquery-rails'
 
@@ -30,7 +31,6 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'bcrypt-ruby'
 gem 'figaro'
-gem 'debugger'
 gem 'backbone-on-rails'
 gem 'ejs'
 
